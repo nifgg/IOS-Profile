@@ -1,5 +1,5 @@
-#!name=myBlockAds
-#!desc=V1 for myBlockAds, 以下app请使用单独插件: 高德地图, 哔哩哔哩, 网易云音乐, 微博, YouTube, 知乎。
+#!name=AdsBlock
+#!desc=以下app请使用单独插件: 高德地图, 哔哩哔哩, 网易云音乐, 微博, YouTube, 知乎。
 #!author=RuCu6 edited by nifgg
 #!icon=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Icons/app/myblockads.png
 
