@@ -1,0 +1,46 @@
+#!name=小红书
+#!desc=V1 for xiaohongshu adblock
+#!author=RuCu6, fmz200, edited by nifgg
+#!icon=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Icons/app/xiaohongshu.png
+
+[Panel]
+小红书 Panel = title="小红书信息", icon="lock.icloud.fill", script-name=小红书 Panel
+
+[Script]
+# 规则脚本部分
+
+# DOMAIN 和 DOMAIN-SUFFIX 规则
+UDP Rule - xiaohongshu.com = type=http-request,pattern=^https?:\\/\\/.*\\.xiaohongshu\\.com, protocol=udp, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 惊喜弹窗
+Surprise Box Get Style = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v1\\/surprisebox\\/get_style, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Surprise Box Open = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v1\\/surprisebox\\/open, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Surprise Box Submit Action = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v1\\/surprisebox\\/submit_action, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 信息流
+User Banner = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v2\\/guide\\/user_banner, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Note Guide = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v3\\/note\\/guide, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 搜索页
+Search Banner List = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v1\\/search\\/banner_list, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Search Hot List = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v1\\/search\\/hot_list, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Search Hint = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v4\\/search\\/hint, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Search Trending = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v4\\/search\\/trending, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 详情页小部件、关注页感兴趣的人
+Widgets and Followfeed = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v2\\/note\\/widgets, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 搜索页广告
+Search Notes Ads = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v10\\/search\\/notes, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 开屏广告
+Splash Config = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v2\\/system_service\\/splash_config, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 信息流、详情页感兴趣的人
+Homefeed Ads = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v6\\/homefeed, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+# 移除图片和视频水印
+Image and Video Feed = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v3\\/note\\/videofeed, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+
+[MITM]
+hostname = %APPEND% edith.xiaohongshu.com, www.xiaohongshu.com
