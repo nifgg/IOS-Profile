@@ -41,6 +41,10 @@ Homefeed Ads = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.co
 
 # 移除图片和视频水印
 Image and Video Feed = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v3\\/note\\/videofeed, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Image and Video Feed = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v1\\/note\\/(imagefeed|live_photo\/save), requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Image and Video Feed = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v4\\/followfeed\?, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Image and Video Feed = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v5\\/recommend\/user\/follow_recommend\?, requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
+Image and Video Feed = type=http-response,pattern=^https?:\\/\\/edith\\.xiaohongshu\\.com\\/api\\/sns\\/v6\\/homefeed\?,  requires-body=1, script-path=https://raw.githubusercontent.com/nifgg/IOS-adblock/main/Scripts/xiaohongshu.js
 
 [MITM]
 hostname = %APPEND% edith.xiaohongshu.com, www.xiaohongshu.com
